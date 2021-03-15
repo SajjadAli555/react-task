@@ -1,22 +1,16 @@
 {
-    "tasks": [
-        {
-            "id": 1,
-            "Text": "doctor has appointed",
-            "day": "friday",
-            "reminder": true
-        },
-        {
-            "id": 2,
-            "Text": "doctor has appointed",
-            "day": "friday",
-            "reminder": true
-        },
-        {
-            "id": 3,
-            "Text": "doctor has appointed",
-            "day": "friday",
-            "reminder": true
-        }
-    ]
+  "tasks": [
+    {
+      "id": 2,
+      "text": "doctor has appointed",
+      "day": "sunday",
+      "reminder": true
+    },
+    {
+      "text": "milk",
+      "day": "friday",
+      "reminder": false,
+      "id": 3
+    }
+  ]
 }

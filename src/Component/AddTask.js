@@ -1,21 +1,35 @@
-import React from "react";
-import { Checkbox, TextField, Button } from "@material-ui/core";
+import React, {useState}from "react";
+import { Checkbox, TextField, Button, FormControl } from "@material-ui/core";
 
-function AddTask() {
+const AddTask = ({ onAdd }) => {
+  const [text, setText] = useState("");
+  const [day, setDay] = useState("");
+  const [reminder, setReminder] = useState(false);
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if (!text) {
+      alert("plase add task");
+      return;
+    }
+
+    onAdd({ text, day, reminder });
+    setText("");
+    setDay("");
+    setReminder(false);
+  };
   return (
-    <div>
-      <TextField id="outlined-basic" label="Text" variant="outlined" /><br></br>
-      <TextField id="outlined-basic" label="Day & Time" variant="outlined" /><br />
-      <Checkbox inputProps={{ "aria-label": "uncontrolled-checkbox" }} /><br />
-      <Button
-        variant="outlined"
-        size="medium"
-        color="primary"
-      >
-        Submit
+    <FormControl variant="outlined">
+      <TextField id="outlined-basic" label="Text"  onChange={(e) => setText(e.target.value)} variant="outlined" />
+      <br />
+      <TextField id="outlined-basic"  onChange={(e) => setDay(e.target.value)} label="Day & Time" variant="outlined" />
+      <br />
+      <Checkbox inputProps={{ "aria-label": "uncontrolled-checkbox" }} />
+      <br />
+      <Button variant="outlined" onClick={onSubmit} size="medium" color="primary">
+        Save Task
       </Button>
-    </div>
+    </FormControl>
   );
-}
+};
 
 export default AddTask;
