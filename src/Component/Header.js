@@ -1,10 +1,16 @@
 import { Button } from "@material-ui/core";
-const Header = () => {
+const Header = ({ showAdd, onAdd }) => {
   return (
     <div>
       <h3>Task Tarcker</h3>
-      <Button variant="contained">OnAdd</Button>
-      
+      <Button
+        variant="contained"
+        type="primery"
+        onClick={onAdd}
+        text={showAdd ? "close" : "Add"}
+      >
+        OnAdd
+      </Button>
     </div>
   );
 };
