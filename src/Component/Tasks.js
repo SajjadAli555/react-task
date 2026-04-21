@@ -1,7 +1,6 @@
-import React from "react";
 import Task from "./Task";
 const Tasks = ({ tasks, onDelete }) => {
-  console.log(tasks)
+  console.log(tasks);
   return (
     <>
       {tasks.map((task, index) => {
