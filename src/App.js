@@ -21,7 +21,6 @@ const App = () => {
     const data = await res.json();
     return data;
   };
-  // this is delete task function which will delete the task from the server and then update the state of the tasks
   const deleteTask = async (id) => {
     await fetch(`http://localhost:5000/tasks/${id}`, {
       method: "DELETE",
